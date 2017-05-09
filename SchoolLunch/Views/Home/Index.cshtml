@@ -1,0 +1,42 @@
+﻿@{
+	ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+	<h1>Build your Meal Plan!</h1>
+	<h3 class="lead">Log in or Register to view and change your child's meal plan.</h3>
+	<p><a class="btn btn-info btn-lg" data-toggle="modal" data-target="#sampleplan">Sample Plan</a></p>
+	<div class="modal fade" id="sampleplan" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h3 class="modal-title" id="modalLabel">Sample Plan</h3>
+				</div>
+				<div class="modal-body">
+					<img class="img-responsive" src="~/images/SamplePlan.PNG" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-4">
+		<h3>About Us</h3>
+		<p>More about our meal plans, the school, our philosophy and contact info.</p>
+		<p>@Html.ActionLink("Learn More", "About", "Home", htmlAttributes: new { @class = "btn btn-warning" })</p>
+	</div>
+	<div class="col-md-4">
+		<h3>Special Requests</h3>
+		<p>Does your child have dietary restrictions? Please contact the office to let us help!</p>
+		<p><a class="btn btn-success" href="https://www.fns.usda.gov/school-meals/faqs" target="_blank">Learn More</a></p>
+	</div>
+	<div class="col-md-4">
+		<h3>Nutrition Standards</h3>
+		<p>Find out more about the USDA Nutrition Standards for School Meals here.</p>
+		<p><a class="btn btn-primary" href="https://www.fns.usda.gov/school-meals/nutrition-standards-school-meals" target="_blank">Learn more</a></p>
+	</div>
+</div>

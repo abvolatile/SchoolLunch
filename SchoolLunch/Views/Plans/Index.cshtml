@@ -1,0 +1,52 @@
+﻿@model IEnumerable<SchoolLunch.Models.Plan>
+
+@{
+    ViewBag.Title = "Lunch Plans";
+}
+
+<h2>Available Lunch Options</h2>
+
+@if (User.IsInRole("Admin"))
+{
+	<p>
+		@Html.ActionLink("Create New", "Create")
+	</p>
+}
+else
+{
+	<br />
+	<h4>
+		View and edit your child's Lunch Plan
+		@Html.ActionLink("here", "Index", "UserPlans")
+	</h4>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlanName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlanName)
+        </td>
+        <td>
+			@if (User.IsInRole("Admin"))
+			{
+				@Html.ActionLink("Edit ", "Edit", new { id = item.PlanID })
+				@Html.ActionLink("Details ", "Details", new { id = item.PlanID })
+				@Html.ActionLink("Delete ", "Delete", new { id = item.PlanID })
+			}
+			else
+			{
+				@Html.ActionLink("Details", "Details", new { id = item.PlanID })
+			}
+        </td>
+    </tr>
+}
+
+</table>

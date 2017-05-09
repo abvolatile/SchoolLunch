@@ -1,0 +1,57 @@
+﻿@model SchoolLunch.Models.UserPlan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details for @Html.DisplayFor(model => model.Month)</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MondayPlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MondayPlan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TuesdayPlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TuesdayPlan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WednesdayPlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WednesdayPlan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThursdayPlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThursdayPlan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FridayPlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FridayPlan)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { email = Model.UserEmail, month = Model.Month }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

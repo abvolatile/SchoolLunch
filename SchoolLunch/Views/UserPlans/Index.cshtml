@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SchoolLunch.Models.UserPlan>
+
+@{
+    ViewBag.Title = "Your Plan";
+}
+
+<h2>Your Child's Plan</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Month)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MondayPlan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TuesdayPlan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WednesdayPlan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThursdayPlan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FridayPlan)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Month)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MondayPlan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TuesdayPlan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WednesdayPlan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThursdayPlan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FridayPlan)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { email=item.UserEmail, month=item.Month }) |
+            @Html.ActionLink("Details", "Details", new { email = item.UserEmail, month = item.Month }) |
+            @Html.ActionLink("Delete", "Delete", new { email = item.UserEmail, month = item.Month })
+        </td>
+    </tr>
+}
+
+</table>

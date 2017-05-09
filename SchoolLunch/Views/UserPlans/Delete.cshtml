@@ -1,0 +1,64 @@
+﻿@model SchoolLunch.Models.UserPlan
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Plan</h2>
+<h4>@Html.DisplayFor(model => model.Month)</h4>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MondayPlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MondayPlan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TuesdayPlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TuesdayPlan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WednesdayPlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WednesdayPlan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThursdayPlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThursdayPlan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FridayPlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FridayPlan)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
